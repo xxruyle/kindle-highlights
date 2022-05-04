@@ -3,6 +3,8 @@ with open("My Clippings.txt", mode='r', encoding="utf-8") as f:
     list = txt.split("==========")
 
 
+
+
 books = {}
 for i, quote in enumerate(list[1:-1]): 
     if len(list) > 3:
@@ -16,4 +18,4 @@ for i, quote in enumerate(list[1:-1]):
 
         data = parse[2]
         highlight = parse[4]
-        print(data)
+        print(highlight)
