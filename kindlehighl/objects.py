@@ -1,3 +1,5 @@
+import re 
+
 class readclippings():
     def __init__(self):
         self.encoding = "utf-8"
@@ -45,20 +47,30 @@ class parsetext(readclippings):
             if title not in self.dictionary:
                 self.dictionary[title] = []
 
-
-            agg_quote = sectioned[2] + "\n" + sectioned[4] + "\n\n"  # Making the date added and quote one string
+            data = sectioned[2]
+            page = ' '.join(re.split("[\s|]+", data)[4:6]).capitalize()  # gets the page number or location 
+            date = ' '.join(re.split("[\s|]+", data)[10:16])  # gets the date 
+            agg_quote = page + " - " + date + "\n" + sectioned[4] + "\n\n"  # Making the date added and quote one string
             self.dictionary[title].append(agg_quote)  # adding the agg_quote to the dictionary
 
         title_names = list(self.dictionary) 
             
         return title_names
 
-    def getquotes(self):
+    # Writes all found highlights and seperates them accordingly 
+    def all_highlights(self):
         titles = self.createdict()
         for t in titles[1:]:
             with open(f"{self.filepath}\\{t}.txt", "w", encoding="utf-8") as f:
                 for quote in self.dictionary[t]:
                     f.write(quote)
+
+    # Gets an individual book's highlights passed as an argument
+    def ind_highlight(self, book):
+        self.createdict()
+        with open(f"{self.filepath}\\{book}.txt", "w", encoding="utf-8") as f:
+            for quote in self.dictionary[book]:
+                f.write(quote)
     
 
 

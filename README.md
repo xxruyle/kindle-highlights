@@ -3,7 +3,7 @@
 
 # Future To Do
 - [X] Remove bad characters when creating text file name
-- [ ] Better formatting for quotes
+- [X] Better formatting for quotes
 - [ ] Pandas support
 - [ ] Custom file directory 
 - [ ] Command line arguments
