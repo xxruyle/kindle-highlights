@@ -6,22 +6,19 @@
 2) Run `main.py` 
 
 ```powershell
-usage: main.py [-h] [--ind] [--no-ind] [--excel] [--no-excel] [--b book] [--titles] [--no-titles] path
+usage: main.py [-h] [--ind] [--excel] [--b book] [--titles] path
 
 Get the quotes of My Clippings.txt
 
 positional arguments:
-  path         Path of where you want the outputted .txt files
+  path        Path of where you want the outputted .txt files
 
 optional arguments:
-  -h, --help   show this help message and exit
-  --ind        Get the highlights of a singular book
-  --no-ind     Get the highlights of every book
-  --excel      Convert a singular book of highlights to excel. Requires book argument
-  --no-excel   Disables converting to excel
-  --b book     Name of singular book you want to parse
-  --titles     Get the titles
-  --no-titles  Don't get the titles
+  -h, --help  show this help message and exit
+  --ind       Get the highlights of a singular book
+  --excel     Convert a singular book of highlights to excel. Requires book argument
+  --b book    Name of singular book you want to parse
+  --titles    Get the titles
 ```
 
 3) For -b book, use --titles list as the book argument 
@@ -30,6 +27,6 @@ optional arguments:
 - [X] Remove bad characters when creating text file name
 - [X] Better formatting for quotes
 - [X] Pandas support
-- [ ] Custom file directory 
-- [ ] Command line arguments
+- [X] Custom file directory 
+- [X] Command line arguments
 - [ ] Refactoring
