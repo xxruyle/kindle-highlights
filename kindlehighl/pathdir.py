@@ -1,1 +1,0 @@
-filepath = "C:\\coding\\notes"  # default file path

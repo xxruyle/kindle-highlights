@@ -76,7 +76,7 @@ class parsetext(readclippings):
             for quote in self.dictionary[book]:
                 f.write(quote)
     
-    def excel_highlight(self, book, filepath):
+    def excel_highlight(self, book):
         date = self.createdict()[1]
 
         exceldic = {"Date": date,
@@ -102,5 +102,5 @@ class parsetext(readclippings):
 
         df = pd.DataFrame(exceldic)
         
-        df.to_excel(f'{filepath}/{book}.xlsx', engine='xlsxwriter') 
+        df.to_excel(f'{self.filepath}/{book}.xlsx', engine='xlsxwriter') 
 
